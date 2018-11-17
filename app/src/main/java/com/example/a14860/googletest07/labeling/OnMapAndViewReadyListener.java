@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.a14860.googletest07;
+package com.example.a14860.googletest07.labeling;
 
 import android.annotation.SuppressLint;
 import android.os.Build;

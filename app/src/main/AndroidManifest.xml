@@ -27,9 +27,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".BaseActivity"/>
-        <activity android:name=".building1"/>
-        <activity android:name=".MarkerDemoActivity"/>
-        <activity android:name=".MyLocationDemoActivity"/>
+        <activity android:name=".labeling.building1"/>
+        <activity android:name=".labeling.MarkerActivity"/>
+        <activity android:name=".location.MyLocationDemoActivity"/>
 
     </application>
 

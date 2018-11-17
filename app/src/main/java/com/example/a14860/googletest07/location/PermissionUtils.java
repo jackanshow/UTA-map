@@ -1,4 +1,4 @@
-package com.example.a14860.googletest07;
+package com.example.a14860.googletest07.location;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -10,6 +10,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
+import com.example.a14860.googletest07.R;
 
 /**
  * Utility class for access to runtime permissions.

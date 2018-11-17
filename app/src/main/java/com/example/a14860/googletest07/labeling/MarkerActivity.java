@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.a14860.googletest07;
+package com.example.a14860.googletest07.labeling;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -43,6 +43,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.a14860.googletest07.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
@@ -66,7 +67,7 @@ import java.util.Random;
 /**
  * This shows how to place markers on a map.
  */
-public class MarkerDemoActivity extends AppCompatActivity implements
+public class MarkerActivity extends AppCompatActivity implements
         OnMarkerClickListener,
         OnInfoWindowClickListener,
         OnMarkerDragListener,
@@ -486,7 +487,7 @@ public class MarkerDemoActivity extends AppCompatActivity implements
     public void onInfoWindowClick(Marker marker) {
        // Toast.makeText(this, "Click Info Window", Toast.LENGTH_SHORT).show();
         //setContentView(R.layout.image_layout);
-       Intent intent = new Intent(MarkerDemoActivity.this, building1.class);
+       Intent intent = new Intent(MarkerActivity.this, building1.class);
         startActivity(intent);
 
     }

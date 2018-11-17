@@ -8,10 +8,12 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.a14860.googletest07.labeling.MarkerActivity;
+import com.example.a14860.googletest07.location.MyLocationDemoActivity;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -84,7 +86,7 @@ public class MainActivity extends BaseActivity
             // Handle the camera action
             openActivity(MyLocationDemoActivity.class);
         } else if (id == R.id.nav_labeling_layout) {
-            openActivity(MarkerDemoActivity.class);
+            openActivity(MarkerActivity.class);
         } else if (id == R.id.nav_bus_layout) {
 
         } else if (id == R.id.nav_favorite_layout) {

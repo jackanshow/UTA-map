@@ -1,4 +1,4 @@
-package com.example.a14860.googletest07;
+package com.example.a14860.googletest07.location;
 
 import android.Manifest;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.a14860.googletest07.R;
+import com.example.a14860.googletest07.labeling.MarkerActivity;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationClickListener;
@@ -65,7 +67,7 @@ public class MyLocationDemoActivity extends AppCompatActivity
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyLocationDemoActivity.this, MarkerDemoActivity.class);
+                Intent intent = new Intent(MyLocationDemoActivity.this, MarkerActivity.class);
                 startActivity(intent);
             }
         });
