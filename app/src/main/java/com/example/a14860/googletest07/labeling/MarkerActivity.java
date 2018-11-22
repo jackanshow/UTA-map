@@ -76,7 +76,7 @@ public class MarkerActivity extends AppCompatActivity implements
         OnInfoWindowCloseListener,
         OnMapAndViewReadyListener.OnGlobalLayoutAndMapReadyListener {
 
-    private static final LatLng BRISBANE = new LatLng(33.7313504, -97.1108894);
+    private static final LatLng BRISBANE = new LatLng(-37.7313504, 140.1108894);
 
     private static final LatLng MELBOURNE = new LatLng(-37.81319, 144.96298);
 
@@ -87,6 +87,13 @@ public class MarkerActivity extends AppCompatActivity implements
     private static final LatLng ADELAIDE = new LatLng(-34.92873, 138.59995);
 
     private static final LatLng PERTH = new LatLng(-31.952854, 115.857342);
+    //以下为我添加的校园地图label,following LatLng BRISBANE
+    private static final LatLng UC = new LatLng(32.7317408, -97.1113639);
+    private static final LatLng ARB = new LatLng(32.727537, -97.107260);
+    private static final LatLng BookStore = new LatLng(32.7284379, -97.1249115);
+    private static final LatLng Accounting = new LatLng(32.726098, -97.1253623);
+    private static final LatLng Aerospace = new LatLng(32.7284379, -97.1266633);
+    private static final LatLng AccountingSer = new LatLng(32.7297606, -97.1252404);
 //下面这一行是谷歌机器人图标
     //private static final LatLng ALICE_SPRINGS = new LatLng(-24.6980, 133.8807);
 
@@ -132,7 +139,11 @@ public class MarkerActivity extends AppCompatActivity implements
             // Use the equals() method on a Marker to check for equals.  Do not use ==.
             if (marker.equals(mBrisbane)) {
                 badge = R.drawable.badge_qld;
-            } else if (marker.equals(mAdelaide)) {
+            } else if (marker.equals(mUC)) {
+                badge = R.drawable.badge_sa;
+            }else if (marker.equals(mARB)) {
+                badge = R.drawable.badge_sa;
+            }else if (marker.equals(mAdelaide)) {
                 badge = R.drawable.badge_sa;
             } else if (marker.equals(mSydney)) {
                 badge = R.drawable.badge_nsw;
@@ -194,6 +205,10 @@ public class MarkerActivity extends AppCompatActivity implements
     private Marker mDarwin2;
     private Marker mDarwin3;
     private Marker mDarwin4;
+
+    //以下为校园地图
+    private Marker mUC;
+    private Marker mARB;
 
 
     /**
@@ -275,6 +290,8 @@ public class MarkerActivity extends AppCompatActivity implements
                 .include(BRISBANE)
                 .include(MELBOURNE)
                 .include(DARWIN)
+                .include(UC)
+                .include(ARB)
                 .build();
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 50));
     }
@@ -285,8 +302,19 @@ public class MarkerActivity extends AppCompatActivity implements
                 .position(BRISBANE)
                 .title("Brisbane")
                 .snippet("这里是设置building信息wowndiosa" +
-                        "woiewpeapojdopas" +
-                        "我好累我感觉真的要完蛋了")
+                        "woiewpeapojdopas" )
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+        //以下为校园地图
+        mUC = mMap.addMarker(new MarkerOptions()
+                .position(UC)
+                .title("University Center")
+                .snippet("Location: 300 W. First St., Arlington, TX" )
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mARB = mMap.addMarker(new MarkerOptions()
+                .position(ARB)
+                .title("Aerodynamics Research Building")
+                .snippet("Location: 915 Speer St., Arlington, TX" )
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
         // Uses a custom icon with the info window popping out of the center of the icon.
@@ -348,7 +376,7 @@ public class MarkerActivity extends AppCompatActivity implements
         // hues (colors).
         float rotation = mRotationBar.getProgress();
         boolean flat = mFlatBox.isChecked();
-
+            //彩虹
         int numMarkersInRainbow = 12;
         for (int i = 0; i < numMarkersInRainbow; i++) {
             Marker marker = mMap.addMarker(new MarkerOptions()
@@ -442,7 +470,7 @@ public class MarkerActivity extends AppCompatActivity implements
 
     @Override
     public boolean onMarkerClick(final Marker marker) {
-        if (marker.equals(mPerth)) {
+        if (marker.equals(mPerth) || marker.equals(mUC)) {
             // This causes the marker at Perth to bounce into position when it is clicked.
             final Handler handler = new Handler();
             final long start = SystemClock.uptimeMillis();
@@ -487,9 +515,10 @@ public class MarkerActivity extends AppCompatActivity implements
     public void onInfoWindowClick(Marker marker) {
        // Toast.makeText(this, "Click Info Window", Toast.LENGTH_SHORT).show();
         //setContentView(R.layout.image_layout);
-       Intent intent = new Intent(MarkerActivity.this, building1.class);
-        startActivity(intent);
-
+        if(marker.equals(mUC)) {
+            Intent intent = new Intent(MarkerActivity.this, building1.class);
+            startActivity(intent);
+        }
     }
 
     @Override
