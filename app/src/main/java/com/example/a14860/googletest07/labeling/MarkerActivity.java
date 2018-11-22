@@ -90,10 +90,15 @@ public class MarkerActivity extends AppCompatActivity implements
     //以下为我添加的校园地图label,following LatLng BRISBANE
     private static final LatLng UC = new LatLng(32.7317408, -97.1113639);
     private static final LatLng ARB = new LatLng(32.727537, -97.107260);
-    private static final LatLng BookStore = new LatLng(32.7284379, -97.1249115);
-    private static final LatLng Accounting = new LatLng(32.726098, -97.1253623);
-    private static final LatLng Aerospace = new LatLng(32.7284379, -97.1266633);
-    private static final LatLng AccountingSer = new LatLng(32.7297606, -97.1252404);
+    private static final LatLng BookStore = new LatLng(32.733365, -97.109464);
+    private static final LatLng Accounting = new LatLng(32.736896, -97.109274);
+    private static final LatLng Aerospace = new LatLng(32.731494, -97.112531);
+    private static final LatLng Admissions = new LatLng(32.729188, -97.115116);
+    private static final LatLng Library = new LatLng(32.729549, -97.112916);
+    private static final LatLng ArtLibrary = new LatLng(32.730988, -97.116128);
+    private static final LatLng Ballroom = new LatLng(32.732006, -97.110618);
+
+
 //下面这一行是谷歌机器人图标
     //private static final LatLng ALICE_SPRINGS = new LatLng(-24.6980, 133.8807);
 
@@ -143,9 +148,25 @@ public class MarkerActivity extends AppCompatActivity implements
                 badge = R.drawable.badge_sa;
             }else if (marker.equals(mARB)) {
                 badge = R.drawable.badge_sa;
+            }else if (marker.equals(mBookStore)) {
+                badge = R.drawable.badge_sa;
             }else if (marker.equals(mAdelaide)) {
                 badge = R.drawable.badge_sa;
-            } else if (marker.equals(mSydney)) {
+            }else if (marker.equals(mAccounting)) {
+                badge = R.drawable.badge_sa;
+            }else if (marker.equals(mAerospace)) {
+                badge = R.drawable.badge_sa;
+            }else if (marker.equals(mAdmissions)) {
+                badge = R.drawable.badge_sa;
+            }else if (marker.equals(mAdelaide)) {
+                badge = R.drawable.badge_sa;
+            }else if (marker.equals(mLibrary)) {
+                badge = R.drawable.badge_sa;
+            }else if (marker.equals(mArtLibrary)) {
+                badge = R.drawable.badge_sa;
+            }else if (marker.equals(mBallroom)) {
+                badge = R.drawable.badge_sa;
+            }else if (marker.equals(mSydney)) {
                 badge = R.drawable.badge_nsw;
             } else if (marker.equals(mMelbourne)) {
                 badge = R.drawable.badge_victoria;
@@ -209,6 +230,13 @@ public class MarkerActivity extends AppCompatActivity implements
     //以下为校园地图
     private Marker mUC;
     private Marker mARB;
+    private Marker mBookStore;
+    private Marker mAccounting;
+    private Marker mAerospace;
+    private Marker mAdmissions;
+    private Marker mLibrary;
+    private Marker mArtLibrary;
+    private Marker mBallroom;
 
 
     /**
@@ -284,14 +312,18 @@ public class MarkerActivity extends AppCompatActivity implements
         mMap.setContentDescription("Map with lots of markers.");
 
         LatLngBounds bounds = new LatLngBounds.Builder()
-                .include(PERTH)
-                .include(SYDNEY)
-                .include(ADELAIDE)
-                .include(BRISBANE)
-                .include(MELBOURNE)
-                .include(DARWIN)
+//                .include(PERTH)
+//                .include(SYDNEY)
+//                .include(ADELAIDE)
+//                .include(BRISBANE)
+//                .include(MELBOURNE)
+//                .include(DARWIN)
                 .include(UC)
-                .include(ARB)
+                .include(Library)
+                .include(ArtLibrary)
+                .include(Accounting)
+                .include(Admissions)
+//                .include(ARB)
                 .build();
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 50));
     }
@@ -316,6 +348,49 @@ public class MarkerActivity extends AppCompatActivity implements
                 .title("Aerodynamics Research Building")
                 .snippet("Location: 915 Speer St., Arlington, TX" )
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mBookStore = mMap.addMarker(new MarkerOptions()
+                .position(BookStore)
+                .title("Book Store")
+                .snippet("Location: 400 Spaniolo Dr, Arlington, TX" )
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mAccounting = mMap.addMarker(new MarkerOptions()
+                .position(Accounting)
+                .title("Accounting")
+                .snippet("Location: 701 S. West Street, Arlington, TX" )
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mAerospace = mMap.addMarker(new MarkerOptions()
+                .position(Aerospace)
+                .title("Aerospace Engineering")
+                .snippet("Location: 500 W. First St., Arlington, TX" )
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mAdmissions = mMap.addMarker(new MarkerOptions()
+                .position(Admissions)
+                .title("Admissions (Graduate)")
+                .snippet("Location: 701 S. Nedderman Dr., Arlington, TX" )
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mLibrary = mMap.addMarker(new MarkerOptions()
+                .position(Library)
+                .title("Located in Library (LIBR)")
+                .snippet("Location: 702 Planetarium Pl., Arlington, TX" )
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mArtLibrary = mMap.addMarker(new MarkerOptions()
+                .position(ArtLibrary)
+                .title("Architecture & Fine Arts Library")
+                .snippet("Location: 601 W. Nedderman Dr., Arlington, TX" )
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mBallroom = mMap.addMarker(new MarkerOptions()
+                .position(Ballroom)
+                .title("Bluebonnet Ballroom")
+                .snippet("Location: 300 W. First St., Arlington, TX" )
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
 
         // Uses a custom icon with the info window popping out of the center of the icon.
         mSydney = mMap.addMarker(new MarkerOptions()
