@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.example.a14860.googletest07.labeling.MarkerActivity;
 import com.example.a14860.googletest07.location.MyLocationDemoActivity;
+import com.github.chrisbanes.photoview.PhotoView;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,6 +25,7 @@ public class MainActivity extends BaseActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

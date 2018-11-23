@@ -30,6 +30,7 @@
         <activity android:name=".labeling.building1"/>
         <activity android:name=".labeling.MarkerActivity"/>
         <activity android:name=".location.MyLocationDemoActivity"/>
+        <activity android:name=".photoView"/>
 
     </application>
 
