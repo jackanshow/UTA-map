@@ -341,7 +341,7 @@ public class MarkerActivity extends AppCompatActivity implements
                 .position(UC)
                 .title("University Center")
                 .snippet("Location: 300 W. First St., Arlington, TX" )
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 
         mARB = mMap.addMarker(new MarkerOptions()
                 .position(ARB)
