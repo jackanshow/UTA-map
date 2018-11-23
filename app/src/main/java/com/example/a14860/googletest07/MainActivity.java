@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.a14860.googletest07.bus.PolylineActivity;
 import com.example.a14860.googletest07.labeling.MarkerActivity;
 import com.example.a14860.googletest07.location.MyLocationDemoActivity;
 import com.github.chrisbanes.photoview.PhotoView;
@@ -90,7 +91,7 @@ public class MainActivity extends BaseActivity
         } else if (id == R.id.nav_labeling_layout) {
             openActivity(MarkerActivity.class);
         } else if (id == R.id.nav_bus_layout) {
-
+            openActivity(PolylineActivity.class);
         } else if (id == R.id.nav_favorite_layout) {
 
         } else if (id == R.id.nav_share) {
