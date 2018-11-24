@@ -42,6 +42,8 @@ import com.google.android.gms.maps.model.Dot;
 import com.google.android.gms.maps.model.Gap;
 import com.google.android.gms.maps.model.JointType;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PatternItem;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -140,6 +142,20 @@ public class PolylineActivity extends AppCompatActivity
     private static final LatLng BUS61 = new LatLng(32.724403, -97.119522);
 
 
+    private static final LatLng BusStop1 = new LatLng(32.724312, -97.119432);
+    private static final LatLng BusStop2 = new LatLng(32.727049, -97.115729);
+    private static final LatLng BusStop3 = new LatLng(32.729177, -97.109495);
+    private static final LatLng BusStop4 = new LatLng(32.728660, -97.111040);
+    private static final LatLng BusStop5 = new LatLng(32.730649, -97.116466);
+    private static final LatLng BusStop6 = new LatLng(32.730646, -97.121693);
+    private static final LatLng BusStop7 = new LatLng(32.729586, -97.124106);
+    private static final LatLng BusStop8 = new LatLng(32.727879, -97.126303);
+
+
+
+
+
+
     // Airport locations for geodesic polyline.
     private static final LatLng AKL = new LatLng(-37.006254, 174.783018);
     private static final LatLng JFK = new LatLng(40.641051, -73.777485);
@@ -170,6 +186,16 @@ public class PolylineActivity extends AppCompatActivity
     private Spinner mJointTypeSpinner;
     private Spinner mPatternSpinner;
     private CheckBox mClickabilityCheckbox;
+
+    private GoogleMap mMap;
+    private Marker mBusStop1;
+    private Marker mBusStop2;
+    private Marker mBusStop3;
+    private Marker mBusStop4;
+    private Marker mBusStop5;
+    private Marker mBusStop6;
+    private Marker mBusStop7;
+    private Marker mBusStop8;
 
     // These are the options for polyline caps, joints and patterns. We use their
     // string resource IDs as identifiers.
@@ -209,7 +235,7 @@ public class PolylineActivity extends AppCompatActivity
 
         mWidthBar = (SeekBar) findViewById(R.id.widthSeekBar);
         mWidthBar.setMax(MAX_WIDTH_PX);
-        mWidthBar.setProgress(MAX_WIDTH_PX / 2);
+        mWidthBar.setProgress(MAX_WIDTH_PX / 5);
 
         mStartCapSpinner = (Spinner) findViewById(R.id.startCapSpinner);
         mStartCapSpinner.setAdapter(new ArrayAdapter<>(
@@ -248,17 +274,19 @@ public class PolylineActivity extends AppCompatActivity
 
     @Override
     public void onMapReady(GoogleMap map) {
-
+        mMap = map;
         // Override the default content description on the view, for accessibility mode.
         map.setContentDescription(getString(R.string.polyline_demo_description));
 
+        addMarkersToMap();
+
         // A geodesic polyline that goes around the world.
-        map.addPolyline(new PolylineOptions()
-                .add(LHR, AKL, LAX, JFK, LHR)
-                .width(INITIAL_STROKE_WIDTH_PX)
-                .color(Color.BLUE)
-                .geodesic(true)
-                .clickable(mClickabilityCheckbox.isChecked()));
+//        map.addPolyline(new PolylineOptions()
+//                .add(LHR, AKL, LAX, JFK, LHR)
+//                .width(INITIAL_STROKE_WIDTH_PX)
+//                .color(Color.BLUE)
+//                .geodesic(true)
+//                .clickable(mClickabilityCheckbox.isChecked()));
 
         // A simple polyline across Australia. This polyline will be mutable.
         int color = Color.HSVToColor(
@@ -273,6 +301,9 @@ public class PolylineActivity extends AppCompatActivity
                         BUS31,BUS32,BUS33,BUS34,BUS35,BUS36,BUS37,BUS38,BUS39,BUS40,
                         BUS41,BUS42,BUS43,BUS44,BUS45,BUS46,BUS47,BUS48,BUS49,BUS50,
                         BUS51,BUS52,BUS53,BUS54,BUS55,BUS56,BUS57,BUS58,BUS59,BUS60,BUS61,BUS1)); //由起点到终点依次
+
+
+
 
         mHueBar.setOnSeekBarChangeListener(this);
         mAlphaBar.setOnSeekBarChangeListener(this);
@@ -405,4 +436,49 @@ public class PolylineActivity extends AppCompatActivity
             mMutablePolyline.setClickable(((CheckBox) view).isChecked());
         }
     }
+
+
+    private void addMarkersToMap() {
+        mBusStop1 = mMap.addMarker(new MarkerOptions()
+                .position(BusStop1)
+                .title("Maverick Place Shuttle Stop")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mBusStop2 = mMap.addMarker(new MarkerOptions()
+                .position(BusStop2)
+                .title("Centennial Court Shuttle Stop")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mBusStop3 = mMap.addMarker(new MarkerOptions()
+                .position(BusStop3)
+                .title("KC Hall")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mBusStop4 = mMap.addMarker(new MarkerOptions()
+                .position(BusStop4)
+                .title("Pickard Hall Shuttle Stop")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mBusStop5 = mMap.addMarker(new MarkerOptions()
+                .position(BusStop5)
+                .title("Smart Hospital Shuttle Stop")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mBusStop6 = mMap.addMarker(new MarkerOptions()
+                .position(BusStop6)
+                .title("Arbor Oaks Shuttle Stop")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mBusStop7 = mMap.addMarker(new MarkerOptions()
+                .position(BusStop7)
+                .title("Studio Arts Shuttle Stop")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        mBusStop8 = mMap.addMarker(new MarkerOptions()
+                .position(BusStop8)
+                .title("Stadium Shuttle Stop")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+    }
+
 }
