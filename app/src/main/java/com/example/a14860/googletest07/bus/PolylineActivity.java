@@ -65,14 +65,79 @@ public class PolylineActivity extends AppCompatActivity
 
 
     //bus stop
-    private static final LatLng BUS1 = new LatLng(32.724253, -97.119494);
-    private static final LatLng BUS2 = new LatLng(32.728037, -97.126431);
-    private static final LatLng BUS3 = new LatLng(32.729560, -97.124372);
-    private static final LatLng BUS4= new LatLng(32.730425, -97.120864);
-    private static final LatLng BUS5 = new LatLng(32.730252, -97.115828);
-    private static final LatLng BUS6 = new LatLng(32.729041, -97.111042);
-    private static final LatLng BUS7 = new LatLng(32.729150, -97.109715);
-    private static final LatLng BUS8 = new LatLng(32.726090, -97.116940);
+    private static final LatLng BUS1 = new LatLng(32.724312, -97.119432);
+    private static final LatLng BUS2 = new LatLng(32.724366, -97.120859);
+    private static final LatLng BUS3 = new LatLng(32.724366, -97.122243);
+    private static final LatLng BUS4= new LatLng(32.724465, -97.123713);
+    private static final LatLng BUS5 = new LatLng(32.725250, -97.123692);
+
+    private static final LatLng BUS6 = new LatLng(32.726062, -97.123681);
+    private static final LatLng BUS7 = new LatLng(32.726107, -97.125065);
+    private static final LatLng BUS8 = new LatLng(32.726098, -97.126277);
+    private static final LatLng BUS9 = new LatLng(32.725990, -97.126953);
+    private static final LatLng BUS10 = new LatLng(32.725864, -97.127586);
+
+    private static final LatLng BUS11 = new LatLng(32.726956, -97.127607);
+    private static final LatLng BUS12 = new LatLng(32.727859, -97.127575);
+    private static final LatLng BUS13 = new LatLng(32.727868, -97.126438);
+    private static final LatLng BUS14 = new LatLng(32.727877, -97.125333);
+    private static final LatLng BUS15 = new LatLng(32.728003, -97.125183);
+
+    private static final LatLng BUS16 = new LatLng(32.729062, -97.125161);
+    private static final LatLng BUS17 = new LatLng(32.729585, -97.125147);
+    private static final LatLng BUS18 = new LatLng(32.729594, -97.124258);
+    private static final LatLng BUS19 = new LatLng(32.729621, -97.123700);
+    private static final LatLng BUS20= new LatLng(32.730244, -97.123679);
+
+    private static final LatLng BUS21 = new LatLng(32.730722, -97.123615);
+    private static final LatLng BUS22 = new LatLng(32.730742, -97.122717);
+    private static final LatLng BUS23 = new LatLng(32.730742, -97.121708);
+    private static final LatLng BUS24 = new LatLng(32.730101, -97.121687);
+    private static final LatLng BUS25 = new LatLng(32.729379, -97.121687);
+
+    private static final LatLng BUS26 = new LatLng(32.729478, -97.120249);
+    private static final LatLng BUS27 = new LatLng(32.729595, -97.118693);
+    private static final LatLng BUS28 = new LatLng(32.730209, -97.118704);
+    private static final LatLng BUS29 = new LatLng(32.730778, -97.118763);
+    private static final LatLng BUS30 = new LatLng(32.730674, -97.118119);
+
+    private static final LatLng BUS31 = new LatLng(32.730638, -97.117556);
+    private static final LatLng BUS32 = new LatLng(32.730633, -97.116944);
+    private static final LatLng BUS33 = new LatLng(32.730633, -97.116391);
+    private static final LatLng BUS34 = new LatLng(32.729488, -97.116399);
+    private static final LatLng BUS35 = new LatLng(32.728577, -97.116413);
+
+    private static final LatLng BUS36= new LatLng(32.728415, -97.116279);
+    private static final LatLng BUS37 = new LatLng(32.728429, -97.115464);
+    private static final LatLng BUS38 = new LatLng(32.728402, -97.114638);
+    private static final LatLng BUS39 = new LatLng(32.727251, -97.114676);
+    private static final LatLng BUS40 = new LatLng(32.727233, -97.113877);
+
+    private static final LatLng BUS41 = new LatLng(32.726976, -97.112933);
+    private static final LatLng BUS42 = new LatLng(32.726899, -97.111876);
+    private static final LatLng BUS43 = new LatLng(32.727012, -97.111087);
+    private static final LatLng BUS44 = new LatLng(32.728366, -97.111071);
+    private static final LatLng BUS45 = new LatLng(32.729192, -97.111068);
+
+    private static final LatLng BUS46 = new LatLng(32.729187, -97.109931);
+    private static final LatLng BUS47 = new LatLng(32.729164, -97.108767);
+    private static final LatLng BUS48 = new LatLng(32.727571, -97.108799);
+    private static final LatLng BUS49 = new LatLng(32.727196, -97.109958);
+    private static final LatLng BUS50 = new LatLng(32.727020, -97.111085);
+
+    private static final LatLng BUS51 = new LatLng(32.726903, -97.112303);
+    private static final LatLng BUS52= new LatLng(32.727093, -97.113365);
+    private static final LatLng BUS53 = new LatLng(32.727228, -97.114003);
+    private static final LatLng BUS54 = new LatLng(32.727251, -97.114883);
+    private static final LatLng BUS55 = new LatLng(32.727066, -97.115752);
+
+    private static final LatLng BUS56 = new LatLng(32.726669, -97.116390);
+    private static final LatLng BUS57 = new LatLng(32.726091, -97.117297);
+    private static final LatLng BUS58 = new LatLng(32.725924, -97.118032);
+    private static final LatLng BUS59 = new LatLng(32.726019, -97.122593);
+    private static final LatLng BUS60 = new LatLng(32.724439, -97.122644);
+
+    private static final LatLng BUS61 = new LatLng(32.724403, -97.119522);
 
 
     // Airport locations for geodesic polyline.
@@ -202,7 +267,12 @@ public class PolylineActivity extends AppCompatActivity
                 .color(color)
                 .width(mWidthBar.getProgress())
                 .clickable(mClickabilityCheckbox.isChecked())
-                .add(BUS1,BUS2,BUS3,BUS4,BUS5,BUS6,BUS7,BUS8,BUS1)); //由起点到终点依次
+                .add(BUS1,BUS2,BUS3,BUS4,BUS5,BUS6,BUS7,BUS8,BUS9,BUS10,
+                        BUS11,BUS12,BUS13,BUS14,BUS15,BUS16,BUS17,BUS18,BUS19,BUS20,
+                        BUS21,BUS22,BUS23,BUS24,BUS25,BUS26,BUS27,BUS28,BUS29,BUS30,
+                        BUS31,BUS32,BUS33,BUS34,BUS35,BUS36,BUS37,BUS38,BUS39,BUS40,
+                        BUS41,BUS42,BUS43,BUS44,BUS45,BUS46,BUS47,BUS48,BUS49,BUS50,
+                        BUS51,BUS52,BUS53,BUS54,BUS55,BUS56,BUS57,BUS58,BUS59,BUS60,BUS61,BUS1)); //由起点到终点依次
 
         mHueBar.setOnSeekBarChangeListener(this);
         mAlphaBar.setOnSeekBarChangeListener(this);
