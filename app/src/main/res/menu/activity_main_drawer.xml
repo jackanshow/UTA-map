@@ -7,7 +7,7 @@
         <item
             android:id="@+id/nav_maps_layout"
             android:icon="@drawable/ic_menu_maps"
-            android:title="Maps" />
+            android:title="Location" />
         <item
             android:id="@+id/nav_labeling_layout"
             android:icon="@drawable/ic_menu_labeling"
