@@ -49,4 +49,26 @@
     <string name="polyline_demo_description">Demonstrates how to add Polylines to a map.</string>
 
 
+    <string name="title_activity_maps">Map</string>
+    <string name="text_accounts">All Accounts</string>
+    <string name="hint_name">姓名</string>
+    <string name="hint_email">邮箱/电话</string>
+    <string name="hint_password">密码</string>
+    <string name="hint_confirm_password">确认密码</string>
+    <string name="text_login">登陆</string>
+    <string name="text_register">注册</string>
+    <string name="error_message_name">请输入姓名</string>
+    <string name="error_message_email">请输入有效的邮箱或电话</string>
+    <string name="error_message_age">请输入年龄</string>
+    <string name="error_message_password">请输入密码</string>
+    <string name="success_message">注册成功</string>
+    <string name="text_not_member">还没有账号? 注册一个</string>
+    <string name="text_already_member">已经有账号了? 登陆</string>
+    <string name="error_email_exists">邮箱/地址 已经存在</string>
+    <string name="error_password_match">Password Does Not Matches</string>
+    <string name="error_valid_email_password">Wrong Email or Password</string>
+    <string name="text_hello">Hello,</string>
+    <string name="text_title">Android Tutorials Hub</string>
+    <string name="no_login">  未登录  </string>
+
 </resources>
