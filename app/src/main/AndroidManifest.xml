@@ -49,6 +49,8 @@
         <activity android:name=".activities.photoview.ShowImageActivity">
         </activity>
 
+        <activity android:name=".location.SearchActivity">
+        </activity>
     </application>
 
 </manifest>

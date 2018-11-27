@@ -1,5 +1,6 @@
 package com.example.a14860.googletest07;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,18 +10,29 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.a14860.googletest07.activities.login.LoginActivity;
 import com.example.a14860.googletest07.bus.PolylineActivity;
 import com.example.a14860.googletest07.labeling.MarkerActivity;
 import com.example.a14860.googletest07.location.MyLocationDemoActivity;
+import com.example.a14860.googletest07.location.SearchActivity;
 import com.example.a14860.googletest07.utils.SPUtils;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    private static final String TAG = "MainActivity";
+
+    private static final int ERROR_DIALOG_REQUEST = 9001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +58,6 @@ public class MainActivity extends BaseActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
 
         //判断是否登陆、如果登陆，获取用户名
         boolean already_logged = (boolean) SPUtils.get(this, SPUtils.AlreadyLogged, false);
@@ -97,7 +108,7 @@ public class MainActivity extends BaseActivity
 
         if (id == R.id.nav_maps_layout) {
             // Handle the camera action
-            openActivity(MyLocationDemoActivity.class);
+            openActivity(SearchActivity.class);
         } else if (id == R.id.nav_labeling_layout) {
             openActivity(MarkerActivity.class);
         } else if (id == R.id.nav_bus_layout) {
